@@ -1,5 +1,6 @@
-import { NgModule         } from '@angular/core';
-import { CommonModule     } from '@angular/common';
+import { NgModule     } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
 import { DirectivesModule } from '@app/directives/directives.module';
 
 import { ProjectsRouting   } from './projects.routing';

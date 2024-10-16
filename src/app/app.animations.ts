@@ -8,7 +8,7 @@ import { trigger    } from '@angular/animations';
 import { transition } from '@angular/animations';
 
 
-const duration = '0.6s';
+const duration = '0.4s';
 const queryMain = style({ top: 0, position: 'relative', overflow: 'hidden' });
 
 const animateIn    = animate(`${duration} ease-out`, style({ 'opacity': '1' }));
@@ -25,26 +25,26 @@ export let AppAnimations = trigger('routerTransition', [
     transition('home => about-me,\
                 home => abilities,\
                 home => projects,\
-                about-me => abilities,\
-                about-me => projects,\
-                abilities => projects', 
+                projects => abilities,\
+                projects => about-me,\
+                abilities => about-me', 
                 group([
-                    query('main',   [ queryMain  ], { optional: true }),
-                    query(':enter', [ animateIn  ], { optional: true }),
-                    query(':leave', [ animateOut ], { optional: true })
+                    query('main',   [ queryMain ], { optional: true }),
+                    query(':enter', [ positionRight, animateRight, animateIn ], { optional: true }),
+                    query(':leave', [ positionCenter, animateLeft, animateOut ], { optional: true })
                 ])
     ),
 
-    transition('projects => abilities,\
-                projects => about-me,\
-                projects => home,\
-                abilities => about-me,\
+    transition('about-me => home,\
+                about-me => projects,\
+                about-me => abilities,\
+                abilities => projects,\
                 abilities => home,\
-                about-me => home', 
+                projects => home', 
                 group([
                     query('main',   [ queryMain  ], { optional: true }),
-                    query(':enter', [ animateIn  ], { optional: true }),
-                    query(':leave', [ animateOut ], { optional: true })
+                    query(':enter', [ positionLeft, animateLeft, animateIn ], { optional: true }),
+                    query(':leave', [ positionCenter, animateRight, animateOut ], { optional: true })
                 ])
     )
 ]);

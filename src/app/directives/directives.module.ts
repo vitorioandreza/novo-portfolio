@@ -1,11 +1,19 @@
-import { NgModule         } from '@angular/core';
-import { CommonModule     } from '@angular/common';
+import { NgModule     } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+import { BlurDirective    } from './blur.directive';
 import { AnimateDirective } from './animate.directive';
 
 
 @NgModule({
-	exports: [ AnimateDirective ],
+	exports: [
+		BlurDirective,
+		AnimateDirective
+	],
 	imports: [ CommonModule ],
-	declarations: [ AnimateDirective ]
+	declarations: [
+		BlurDirective,
+		AnimateDirective
+	]
 })
 export class DirectivesModule {}

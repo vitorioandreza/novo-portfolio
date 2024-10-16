@@ -1,0 +1,9 @@
+{
+    "topic": "Ferramentas e Habilidades",
+    "title": "<strong>Conhecimentos</strong> adquiridos",
+    "description": "Estas são algumas ferramentas que aprendi e utilizei para desenvolver meus projetos, cada dia sempre buscar me aperfeiçoar e entregar o melhor resultado possível.",
+    "url": "#",
+    "label": "Conheça minha história",
+    "hardskills" : ["HTML", "CSS/SASS", "Bootstrap", "JavaScript", "jQuery", "TypeScript", "JSON/AJAX", "PhotoSwipe", "Packery", "SplideJS", "Angular", "PHP", "MySQL", "API Rest", "WordPress", "Plugin ACF", "Git", "SEO", "Figma", "Photoshop", "Adobe XD"],
+    "softskills" : ["Adaptabilidade","Comunicação", "Curiosidade", "Criatividade", "Colaboração", "Empatia", "Idioma: Inglês (B2)"]
+}

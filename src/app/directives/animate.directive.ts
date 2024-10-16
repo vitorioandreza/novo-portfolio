@@ -1,19 +1,19 @@
-import { Directive, ElementRef, HostListener, Renderer2, Input, OnInit } from '@angular/core';
+import { Directive, ElementRef, HostListener, Renderer2, Input } from '@angular/core';
 
 @Directive({
     selector: '[animate]'
 })
-export class AnimateDirective implements OnInit {
+export class AnimateDirective {
 
-    @Input() animate = '';
-    @Input() delay = '';
+    @Input() animate: string = '';
+    @Input() delay: string = '';
 
     constructor(
         private element: ElementRef,
         private renderer: Renderer2
     ) {}
 
-    ngOnInit() {
+    ngAfterContentInit() {
         this.renderer.addClass(this.element.nativeElement, 'animate-' + this.animate);
         if (this.delay) this.renderer.addClass(this.element.nativeElement, 'animate-delay-' + this.delay);
 
