@@ -1,0 +1,94 @@
+@import "../../assets/library.sass"
+
+.btn 
+	margin-left: auto
+
+	@media (max-width: 991px)
+		margin-left: 0
+		margin-top: 40px
+
+.projects 
+	gap: 20px 24px
+
+	.project
+		overflow: hidden
+
+		img
+			width: 100%
+			height: auto
+
+		&:after
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			opacity: 0%
+			content: ''
+			pointer-events: none
+			@extend .pos-absolute
+			@include transition(opacity)
+			background: rgba(0, 0, 0, 30%)
+
+		&:hover
+			&:after 
+				opacity: 100%
+
+			.details
+				transform: translateY(0%)
+
+		@media (max-width: 991px)
+			&:after
+				opacity: 100%
+				
+		.details
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			z-index: 2
+			transform: translateY(100%)
+			@include transition(transform)
+
+			.tag
+				margin-left: 20px
+				margin-bottom: 20px
+				padding: 5px 10px
+				max-width: fit-content
+				background: var(--details)
+				@include font-setting(500, 16, 20, light)
+
+				@media (max-width: 767px)
+					margin-left: 10px
+					margin-bottom: 10px
+
+			.infos
+				gap: 20px
+				width: 100%	
+				padding: 30px 20px
+				background: var(--white)
+
+				h2
+					margin-bottom: 15px
+					@include font-setting(600, 22, 28, black)
+
+				p
+					margin-bottom: 5px
+					@include font-setting(400, 16, 20, black)
+
+				small
+					opacity: 55%
+					@include font-setting(400, 12, 16, dark)
+
+			@media (max-width: 991px)
+				transform: none
+
+				.infos 
+					padding: 20px 12px
+					
+					h2
+						font-size: 20px
+						line-height: 26px
+
+					.btn
+						margin-top: 0
+						margin-left: 0

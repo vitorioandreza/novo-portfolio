@@ -1,0 +1,60 @@
+<header class="header pos-absolute d-flex ai-center jc-space-between">
+	<a routerLink="/home" class="brand">
+		<span class="circle"></span>
+		<span class="d-block d-sm-none">Andreza Vitório</span>
+		<span class="d-none d-sm-block">AV</span>
+		<span class="circle"></span>
+	</a>
+
+	<div class="navigation d-flex ai-center p-relative">
+		<!-- <button class="language"><i class="icon-planet"></i> En</button> -->
+
+		<nav class="navbar">
+			<button class="toogle" aria-label="Abrir e fechar menu" (click)="toggle_menu()" [class.active]="visible_menu">
+				<span></span><span></span><span></span>
+			</button>
+
+			<ul class="menu pos-fixed" [class.active]="visible_menu">
+				<li><a routerLink="/home" (click)="toggle_menu()" routerLinkActive="active">Início</a></li>
+				<li><a routerLink="/sobre-mim" (click)="toggle_menu()" routerLinkActive="active">Sobre mim</a></li>
+				<li><a routerLink="/projetos" (click)="toggle_menu()" routerLinkActive="active">Projetos</a></li>
+				<li><a routerLink="/habilidades" (click)="toggle_menu()" routerLinkActive="active">Habilidades</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<div class="shadow" [class.visible]="visible_menu"></div>
+
+<main [attr.page]="animation()" [@routerTransition]="animation()" [class]="change_color_theme()">
+	<router-outlet></router-outlet>
+	
+	<footer class="footer" *ngIf="animation() != 'home'">
+		<div class="container">
+			<div class="initial ta-center">
+				<small class="ta-center m-auto">Como eu posso te ajudar?</small>
+				<h2 class="ta-center"><strong>Curtiu?</strong> Entre em contato!</h2>
+
+				<div class="contacts d-flex fw-wrap jc-center">
+					<a href="https://www.linkedin.com/in/andreza-vitorio-s/" class="btn secundary" target="_blank" rel="noopener" title="Visite meu perfil no LinkedIn"><i class="icon-linkedin"></i> <span class="d-block d-md-none">Andreza Vitório</span></a>
+					<a href="https://wa.me/5571999517448" class="btn secundary" target="_blank" rel="noopener" title="Entre em contato pelo Whatsapp"><i class="icon-whatsapp"></i> <span class="d-block d-md-none">+55 71 99951-7448</span></a>
+					<a href="mailto:vitorio.andreza.s@gmail.com" class="btn secundary" target="_blank" rel="noopener" title="Entre em contato por e-mail"><i class="icon-envelope"></i> <span class="d-block d-md-none">vitorio.andreza.s&#64;gmail.com</span></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="final d-flex ai-center jc-center">
+			<div class="container">
+				<div class="d-flex fw-wrap fd-md-column ai-center jc-space-between jc-md-center">
+					<!-- <p>Todos os direitos reservados</p> -->
+					
+					<a routerLink="/home" class="middle">
+						<span class="circle"></span>Andreza Vitório<span class="circle"></span>
+					</a>
+					
+					<a href="#" target="_blank" rel="noopener">Código fonte do projeto</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+</main>

@@ -1,0 +1,86 @@
+{
+    "topic": "Projetos Desenvolvidos",
+    "title": "Conheça um pouco<br> do <strong>meu trabalho</strong>",
+    "description": "Estes são alguns dos principais projetos que desenvolvi ao longo dos meus 5 anos na área de programação utilizando tecnologias diversas e aprimorando cada vez mais meus conhecimentos.",
+    "label": "habilidades profissionais",
+    "projects" : [
+        {
+            "url": "https://darrow.com.br/",
+            "image": {
+                "src": "assets/images/darrow.jpg",
+                "alt": "Print do site Darrow",
+                "width": "430",
+                "height": "560"
+            },
+            "tag": "desenvolvimento",
+            "name": "Darrow",
+            "tech": "Wordpress",
+            "caption": "Criação da CRP Mango"
+        },
+        {
+            "url": "https://gabriel.money/",
+            "image": {
+                "src": "assets/images/gabrielmoney.jpg",
+                "alt": "Print do site Gabriel Money",
+                "width": "430",
+                "height": "560"
+            },
+            "tag": "desenvolvimento",
+            "name": "Gabriel Money",
+            "tech": "Wordpress",
+            "caption": "Criação da CRP Mango"
+        },
+        {
+            "url": "https://clinicaflorence.com.br/",
+            "image": {
+                "src": "assets/images/clinicaflorence.jpg",
+                "alt": "Print do site Clínica Florence",
+                "width": "430",
+                "height": "560"
+            },
+            "tag": "desenvolvimento",
+            "name": "Clínica Florence",
+            "tech": "Wordpress",
+            "caption": "Criação da Quantica Comunicação"
+        },
+        {
+            "url": "https://quantica3d.com.br/pt/home",
+            "image": {
+                "src": "assets/images/quantica3d.jpg",
+                "alt": "Print do site Quantica 3D",
+                "width": "430",
+                "height": "560"
+            },
+            "tag": "desenvolvimento",
+            "name": "Quantica 3D",
+            "tech": "Angular • Wordpress",
+            "caption": "Criação da Quantica Comunicação"
+        },
+        {
+            "url": "https://www.sertenge.com.br/selettosalvadornorte/",
+            "image": {
+                "src": "assets/images/seletto.jpg",
+                "alt": "Print do site Seletto Salvador Norte",
+                "width": "430",
+                "height": "560"
+            },
+            "tag": "desenvolvimento",
+            "name": "Seletto Salvador Norte",
+            "tech": "HTML • CSS • jQuery",
+            "caption": "Criação da Quantica Comunicação"
+        },
+        {
+            "url": "https://hortoboulevard.com.br/",
+            "image": {
+                "src": "assets/images/hortoboulevard.jpg",
+                "alt": "Print do site Horto Boulevard",
+                "width": "430",
+                "height": "560"
+            },
+            "tag": "desenvolvimento",
+            "name": "Horto Boulevard",
+            "tech": "HTML • CSS • jQuery",
+            "caption": "Criação da Quantica Comunicação"
+        }
+    ]
+}

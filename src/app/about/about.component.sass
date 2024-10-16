@@ -1,0 +1,26 @@
+main
+	overflow: hidden
+	
+.photo 
+	margin: auto
+	width: fit-content
+
+	@media (max-width: 991px)
+		margin-bottom: 60px
+
+	.selo
+		opacity: 80%
+		width: 160px
+		height: 60px
+		position: absolute
+		background: var(--secundary)
+
+		&.top
+			top: 0
+			right: 0
+			transform: translate3d(20%, -50%, 0)
+
+		&.bottom
+			left: 0
+			bottom: 0
+			transform: translate3d(-20%, 50%, 0)

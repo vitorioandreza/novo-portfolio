@@ -1,0 +1,116 @@
+<h1 class="for-sreader">Projetos</h1>
+
+<div class="radial-blur"></div>
+
+<div *NgIf="!loading" class="container">
+	<section class="initial mb-60">
+		<div class="d-flex fw-wrap ai-flex-end jc-space-between">
+			<div class="col-6 col-xl-6 col-lg-12">
+				<small class="tt-lowercase">{{ content.topic }}</small>
+				<h2>{{ content.title }}</h2>
+				<p>{{ content.description }}</p>
+			</div>
+			<div class="col-4 col-xl-5 col-lg-12">
+				<a routerLink="/habilidades" class="btn secundary">{{ content.label }} <i class="icon-arrow"></i></a>
+			</div>
+		</div>
+	</section>
+
+	<section class="projects d-flex fw-wrap jc-space-between">
+		<a href="https://darrow.com.br/" class="d-block col-4 col-sm-12 col-lg-6 project pos-relative" target="_blank" rel="noopener noreferrer">
+			<img src="assets/images/darrow.jpg" alt="" width="430" height="560" loading="lazy">
+			<div class="details pos-absolute d-flex fd-column ai-flex-start jc-flex-end">
+				<div class="tag">desenvolvimento</div>
+				<div class="infos d-flex fw-md-wrap ai-flex-end jc-space-between">
+					<div class="text col-md-12">
+						<h2>Darrow</h2>
+						<p>Wordpress</p>
+						<small>Criação da CRPMango</small>
+					</div>
+
+					<button type="button" class="btn">Conheça</button>
+				</div>
+			</div>
+		</a>
+
+		<a href="https://gabriel.money/" class="d-block col-4 col-sm-12 col-lg-6 project pos-relative" target="_blank" rel="noopener noreferrer">
+			<img src="assets/images/gabrielmoney.jpg" alt="Print do site Gabriel Money" width="430" height="560" loading="lazy">
+			<div class="details pos-absolute d-flex fd-column ai-flex-start jc-flex-end">
+				<div class="tag">desenvolvimento</div>
+				<div class="infos d-flex fw-md-wrap ai-flex-end jc-space-between">
+					<div class="text col-md-12">
+						<h2>Gabriel Money</h2>
+						<p>Wordpress</p>
+						<small>Criação da CRPMango</small>
+					</div>
+
+					<button type="button" class="btn">Conheça</button>
+				</div>
+			</div>
+		</a>
+
+		<a href="https://clinicaflorence.com.br/" class="d-block col-4 col-sm-12 col-lg-6 project pos-relative" target="_blank" rel="noopener noreferrer">
+			<img src="assets/images/clinicaflorence.jpg" alt="" width="430" height="560" loading="lazy">
+			<div class="details pos-absolute d-flex fd-column ai-flex-start jc-flex-end">
+				<div class="tag">desenvolvimento</div>
+				<div class="infos d-flex fw-md-wrap ai-flex-end jc-space-between">
+					<div class="text col-md-12">
+						<h2>Clínica Florence</h2>
+						<p>Wordpress</p>
+						<small>Criação da Quantica Comunicação</small>
+					</div>
+
+					<button type="button" class="btn">Conheça</button>
+				</div>
+			</div>
+		</a>
+
+		<a href="https://quantica3d.com.br/pt/home" class="d-block col-4 col-sm-12 col-lg-6 project pos-relative" target="_blank" rel="noopener noreferrer">
+			<img src="assets/images/quantica3d.jpg" alt="" width="430" height="560" loading="lazy">
+			<div class="details pos-absolute d-flex fd-column ai-flex-start jc-flex-end">
+				<div class="tag">desenvolvimento</div>
+				<div class="infos d-flex fw-md-wrap ai-flex-end jc-space-between">
+					<div class="text col-md-12">
+						<h2>Quantica 3D</h2>
+						<p>Angular • Wordpress</p>
+						<small>Criação da Quantica Comunicação</small>
+					</div>
+
+					<button type="button" class="btn">Conheça</button>
+				</div>
+			</div>
+		</a>
+
+		<a href="https://www.sertenge.com.br/selettosalvadornorte/" class="d-block col-4 col-sm-12 col-lg-6 project pos-relative" target="_blank" rel="noopener noreferrer">
+			<img src="assets/images/seletto.jpg" alt="" width="430" height="560" loading="lazy">
+			<div class="details pos-absolute d-flex fd-column ai-flex-start jc-flex-end">
+				<div class="tag">desenvolvimento</div>
+				<div class="infos d-flex fw-md-wrap ai-flex-end jc-space-between">
+					<div class="text col-md-12">
+						<h2>Seletto Salvador Norte</h2>
+						<p>HTML • CSS • jQuery</p>
+						<small>Criação da Quantica Comunicação</small>
+					</div>
+
+					<button type="button" class="btn">Conheça</button>
+				</div>
+			</div>
+		</a>
+
+		<a href="https://hortoboulevard.com.br/" class="d-block col-4 col-sm-12 col-lg-6 project pos-relative" target="_blank" rel="noopener noreferrer">
+			<img src="assets/images/hortoboulevard.jpg" alt="" width="430" height="560" loading="lazy">
+			<div class="details pos-absolute d-flex fd-column ai-flex-start jc-flex-end">
+				<div class="tag">desenvolvimento</div>
+				<div class="infos d-flex  fw-md-wrap ai-flex-end jc-space-between">
+					<div class="text col-md-12">
+						<h2>Horto Boulevard</h2>
+						<p>HTML • CSS • jQuery</p>
+						<small>Criação da Quantica Comunicação</small>
+					</div>
+
+					<button type="button" class="btn">Conheça</button>
+				</div>
+			</div>
+		</a>
+	</section>
+</div>

@@ -1,0 +1,492 @@
+@use "sass:math"
+@use "sass:string"
+
+// variables
+$colors: ('white': #FFFFFF, 'black': #000000, 'dark': #001219, 'light': #EEF7FA, 'primary': #457B9D, 'secundary': #A8DADC ,'details': #E63946)
+
+:root
+    --font-ibm: 'IBM Plex Mono', monospace
+
+    @each $name, $value in $colors
+        --#{$name}: #{$value}
+
+
+@mixin square ($size, $round: false)
+    width: $size + px
+    height: $size + px
+
+    @if ($round)
+        border-radius: 100%
+
+
+@mixin font-setting ($weight, $size, $height, $color: dark)
+    font-weight: $weight
+    font-size: $size + px
+    line-height: $height + px
+    color: var(--#{$color})
+
+
+// transition
+@mixin transition ($property...)
+    $transitions: ()
+
+    @each $prop in $property
+        $transitions: append($transitions, multipleTransitions($prop), comma)
+    
+    transition: $transitions
+
+
+@function multipleTransitions ($transition)
+    $delay: null
+    $easing: ease
+    $property: all
+    $duration: 0.3s
+    
+    $unfoldedTransition: ()
+    $default: ($property, $duration, $easing, $delay)
+
+    @for $i from 1 through length($default)
+        $p: null
+
+        @if $i <= length($transition)
+            $p: nth($transition, $i)
+        @else
+            $p: nth($default, $i)
+
+        $unfoldedTransition: append($unfoldedTransition, $p)
+
+    @return $unfoldedTransition
+
+// structure
+.container
+    width: 100%
+    margin: 0 auto
+    max-width: 1360px
+
+    @media (max-width: 1919px)
+        &
+            padding-left: 20px
+            padding-right: 20px
+
+    @media (max-width: 1439px)
+        &
+            max-width: 1260px
+
+    @media (max-width: 1199px)
+        &
+            max-width: 1120px
+
+    @media (max-width: 991px)
+        &
+            max-width: 965px
+
+    @media (max-width: 767px)
+        &
+            max-width: 100%
+
+// text
+.tt
+    &-uppercase
+        text-transform: uppercase
+
+    &-lowercase
+        text-transform: lowercase
+
+    &-capitalize
+        text-transform: capitalize
+
+
+$texts: left, right, center, justify
+.ta
+    @each $text in $texts
+        &-#{$text}
+            text-align: $text
+
+    @media (max-width: 1439px)
+        @each $text in $texts
+            &-xx-#{$text}
+                text-align: $text
+
+    @media (max-width: 1199px)
+        @each $text in $texts
+            &-xl-#{$text}
+                text-align: $text
+
+    @media (max-width: 991px)
+        @each $text in $texts
+            &-lg-#{$text}
+                text-align: $text
+
+    @media (max-width: 767px)
+        @each $text in $texts
+            &-md-#{$text}
+                text-align: $text
+
+    @media (max-width: 575px)
+        @each $text in $texts
+            &-sm-#{$text}
+                text-align: $text
+
+
+// mods
+.for
+    &-display
+        speak: none
+
+    &-sreader
+        height: 0
+        display: block
+        text-indent: -100vw
+
+        font-size: 0
+        line-height: 0
+
+
+// columns
+$columns: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
+
+.col
+    flex: 0 0 auto
+
+    &-12
+        flex: 0 0 100%
+        max-width: 100%
+
+    @each $c in $columns
+        &-#{$c}
+            $size: math.div($c * 100, 12) * 1%
+            flex: 0 0 $size 
+            max-width: calc($size - 20px)
+
+    @media (max-width: 1439px)
+        &-xx-12
+            flex: 0 0 100%
+            max-width: 100%
+
+        @each $c in $columns
+            &-xx-#{$c}
+                $size: math.div($c * 100, 12) * 1%
+                flex: 0 0 $size 
+                max-width: calc($size - 20px)
+
+    @media (max-width: 1199px)
+        &-xl-12
+            flex: 0 0 100%
+            max-width: 100%
+
+        @each $c in $columns
+            &-xl-#{$c}
+                $size: math.div($c * 100, 12) * 1%
+                flex: 0 0 $size 
+                max-width: calc($size - 20px)
+
+    @media (max-width: 991px)
+        &-lg-12
+            flex: 0 0 100%
+            max-width: 100%
+
+        @each $c in $columns
+            &-lg-#{$c}
+                $size: math.div($c * 100, 12) * 1%
+                flex: 0 0 $size 
+                max-width: calc($size - 20px)
+
+    @media (max-width: 767px)
+        &-md-12
+            flex: 0 0 100%
+            max-width: 100%
+
+        @each $c in $columns
+            &-md-#{$c}
+                $size: math.div($c * 100, 12) * 1%
+                flex: 0 0 $size 
+                max-width: calc($size - 20px)
+
+    @media (max-width: 575px)
+        &-sm-12
+            flex: 0 0 100%
+            max-width: 100%
+
+        @each $c in $columns
+            &-sm-#{$c}
+                $size: math.div($c * 100, 12) * 1%
+                flex: 0 0 $size 
+                max-width: calc($size - 20px)
+
+
+$positions: fixed, relative, absolute
+.pos
+    @each $mod in $positions
+        &-#{$mod}
+            position: $mod
+
+    @media (max-width: 1439px)
+        @each $mod in $positions
+            &-xx-#{$mod}
+                position: $mod
+
+    @media (max-width: 1199px)
+        @each $mod in $positions
+            &-xl-#{$mod}
+                position: $mod
+
+    @media (max-width: 991px)
+        @each $mod in $positions
+            &-lg-#{$mod}
+                position: $mod
+
+    @media (max-width: 767px)
+        @each $mod in $positions
+            &-md-#{$mod}
+                position: $mod
+
+    @media (max-width: 575px)
+        @each $mod in $positions
+            &-sm-#{$mod}
+                position: $mod
+
+
+$display: block, flex, none, inline, inline-block, inline-flex
+.d
+    @each $mod in $display
+        &-#{$mod}
+            display: $mod
+
+    @media (max-width: 1439px)
+        @each $mod in $display
+            &-xx-#{$mod}
+                display: $mod
+
+    @media (max-width: 1199px)
+        @each $mod in $display
+            &-xl-#{$mod}
+                display: $mod
+
+    @media (max-width: 991px)
+        @each $mod in $display
+            &-lg-#{$mod}
+                display: $mod
+
+    @media (max-width: 767px)
+        @each $mod in $display
+            &-md-#{$mod}
+                display: $mod
+
+    @media (max-width: 575px)
+        @each $mod in $display
+            &-sm-#{$mod}
+                display: $mod
+
+
+$flexWrap: wrap, nowrap, wrap-reverse
+.fw
+    @each $mod in $flexWrap
+        &-#{$mod}
+            flex-wrap: $mod
+
+    @media (max-width: 1439px)
+        @each $mod in $flexWrap
+            &-xx-#{$mod}
+                flex-wrap: $mod
+
+    @media (max-width: 1199px)
+        @each $mod in $flexWrap
+            &-xl-#{$mod}
+                flex-wrap: $mod
+
+    @media (max-width: 991px)
+        @each $mod in $flexWrap
+            &-lg-#{$mod}
+                flex-wrap: $mod
+
+    @media (max-width: 767px)
+        @each $mod in $flexWrap
+            &-md-#{$mod}
+                flex-wrap: $mod
+
+    @media (max-width: 575px)
+        @each $mod in $flexWrap
+            &-sm-#{$mod}
+                flex-wrap: $mod
+
+
+$flexDirection: row, column, row-reverse, column-reverse
+.fd
+    @each $mod in $flexDirection
+        &-#{$mod}
+            flex-direction: $mod
+
+    @media (max-width: 1439px)
+        @each $mod in $flexDirection
+            &-xx-#{$mod}
+                flex-direction: $mod
+
+    @media (max-width: 1199px)
+        @each $mod in $flexDirection
+            &-xl-#{$mod}
+                flex-direction: $mod
+
+    @media (max-width: 991px)
+        @each $mod in $flexDirection
+            &-lg-#{$mod}
+                flex-direction: $mod
+
+    @media (max-width: 767px)
+        @each $mod in $flexDirection
+            &-md-#{$mod}
+                flex-direction: $mod
+
+    @media (max-width: 575px)
+        @each $mod in $flexDirection
+            &-sm-#{$mod}
+                flex-direction: $mod
+
+
+$alignItems: flex-start, flex-end, center, stretch, baseline
+.ai
+    @each $mod in $alignItems
+        &-#{$mod}
+            align-items: $mod
+
+    @media (max-width: 1439px)
+        @each $mod in $alignItems
+            &-xx-#{$mod}
+                align-items: $mod
+
+    @media (max-width: 1199px)
+        @each $mod in $alignItems
+            &-xl-#{$mod}
+                align-items: $mod
+
+    @media (max-width: 991px)
+        @each $mod in $alignItems
+            &-lg-#{$mod}
+                align-items: $mod
+
+    @media (max-width: 767px)
+        @each $mod in $alignItems
+            &-md-#{$mod}
+                align-items: $mod
+
+    @media (max-width: 575px)
+        @each $mod in $alignItems
+            &-sm-#{$mod}
+                align-items: $mod
+
+
+$justifyContent: flex-start, flex-end, center, space-between, space-around, space-evenly
+.jc
+    @each $mod in $justifyContent
+        &-#{$mod}
+            justify-content: $mod
+
+    @media (max-width: 1439px)
+        @each $mod in $justifyContent
+            &-xx-#{$mod}
+                justify-content: $mod
+
+    @media (max-width: 1199px)
+        @each $mod in $justifyContent
+            &-xl-#{$mod}
+                justify-content: $mod
+
+    @media (max-width: 991px)
+        @each $mod in $justifyContent
+            &-lg-#{$mod}
+                justify-content: $mod
+
+    @media (max-width: 767px)
+        @each $mod in $justifyContent
+            &-md-#{$mod}
+                justify-content: $mod
+
+    @media (max-width: 575px)
+        @each $mod in $justifyContent
+            &-sm-#{$mod}
+                justify-content: $mod
+
+
+// shared
+$sizes: 60, 40, 35, 32, 24, 15, 12
+.p
+    @each $p in $sizes
+        &-#{$p}
+            padding: #{$p}px
+
+        &t-#{$p},
+        &v-#{$p}
+            padding-top: #{$p}px
+
+        &l-#{$p},
+        &h-#{$p}
+            padding-left: #{$p}px
+
+        &r-#{$p},
+        &h-#{$p}
+            padding-right: #{$p}px
+
+        &b-#{$p},
+        &v-#{$p}
+            padding-bottom: #{$p}px
+
+.m
+    &-auto
+        margin-left: auto
+        margin-right: auto
+
+    @each $m in $sizes
+        &-#{$m}
+            margin: #{$m}px
+
+        &t-#{$m},
+        &v-#{$m}
+            margin-top: #{$m}px
+
+        &l-#{$m},
+        &h-#{$m}
+            margin-left: #{$m}px
+
+        &r-#{$m},
+        &h-#{$m}
+            margin-right: #{$m}px
+
+        &b-#{$m},
+        &v-#{$m}
+            margin-bottom: #{$m}px
+
+// transitions
+$delay: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+.animate
+
+    &-fade-in,
+    &-slide-up,
+    &-slide-left,
+    &-slide-right
+        opacity: 0
+        transition: opacity 0.5s ease, transform 0.5s ease
+        transform: translate3d(0, 10%, 0)
+
+        &.visible
+            opacity: 1
+
+    &-slide-up
+        transform: translate3d(0, 0, 0)
+
+        &.visible
+            transform: translate3d(0, 0, 0)
+
+    &-slide-left
+        transform: translate3d(-10%, 0, 0)
+
+        &.visible
+            transform: translate3d(0, 0, 0)
+
+    &-slide-right
+        transform: translate3d(10%, 0, 0)
+
+        &.visible
+            transform: translate3d(0, 0, 0)
+
+    @each $d in $delay
+        &-delay-#{$d}.visible
+            transition-delay: #{$d * 100}ms
