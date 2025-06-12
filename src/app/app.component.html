@@ -1,5 +1,5 @@
 <header class="header pos-absolute d-flex ai-center jc-space-between">
-	<a routerLink="/inicio" class="brand">
+	<a routerLink="/" class="brand">
 		<span class="circle"></span>
 		<span class="d-block d-sm-none">Andreza Vitório</span>
 		<span class="d-none d-sm-block">AV</span>
@@ -15,7 +15,7 @@
 			</button>
 
 			<ul class="menu pos-fixed" [class.active]="visible_menu">
-				<li><a routerLink="/inicio" (click)="toggle_menu()" routerLinkActive="active">Início</a></li>
+				<li><a routerLink="/" (click)="toggle_menu()" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Início</a></li>
 				<li><a routerLink="/sobre-mim" (click)="toggle_menu()" routerLinkActive="active">Sobre mim</a></li>
 				<li><a routerLink="/projetos" (click)="toggle_menu()" routerLinkActive="active">Projetos</a></li>
 				<li><a routerLink="/habilidades" (click)="toggle_menu()" routerLinkActive="active">Habilidades</a></li>
@@ -29,7 +29,7 @@
 <main [attr.page]="animation()" [@routerTransition]="animation()" [class]="change_color_theme()">
 	<router-outlet></router-outlet>
 	
-	<footer class="footer" *ngIf="animation() != 'home'">
+	<footer class="footer" [attr.allow]="show_footer()" *ngIf="show_footer()">
 		<div class="container">
 			<div class="initial ta-center">
 				<small class="ta-center m-auto">Como eu posso te ajudar?</small>
@@ -48,7 +48,7 @@
 				<div class="d-flex fw-wrap fd-md-column ai-center jc-space-between jc-md-center">
 					<!-- <p>Todos os direitos reservados</p> -->
 					
-					<a routerLink="/inicio" class="middle">
+					<a routerLink="" class="middle">
 						<span class="circle"></span>Andreza Vitório<span class="circle"></span>
 					</a>
 					

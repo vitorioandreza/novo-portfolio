@@ -33,6 +33,10 @@ export class AppComponent {
         return this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation'] || 'boot';
     }
 
+    public show_footer () {
+        return this.contexts.getContext('primary')?.route?.snapshot?.data?.['showFooter'] || false;
+    }
+
     public change_color_theme () {
     	return 'gradient-' +  this.animation();
     }

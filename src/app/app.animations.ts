@@ -30,8 +30,8 @@ export let AppAnimations = trigger('routerTransition', [
                 abilities => about-me', 
                 group([
                     query('main',   [ queryMain ], { optional: true }),
-                    query(':enter', [ positionRight, animateRight, animateIn ], { optional: true }),
-                    query(':leave', [ positionCenter, animateLeft, animateOut ], { optional: true })
+                    query(':enter', [ positionRight, animateIn, animateRight ], { optional: true }),
+                    query(':leave', [ positionCenter, animateOut, animateLeft ], { optional: true })
                 ])
     ),
 
@@ -43,8 +43,8 @@ export let AppAnimations = trigger('routerTransition', [
                 projects => home', 
                 group([
                     query('main',   [ queryMain  ], { optional: true }),
-                    query(':enter', [ positionLeft, animateLeft, animateIn ], { optional: true }),
-                    query(':leave', [ positionCenter, animateRight, animateOut ], { optional: true })
+                    query(':enter', [ positionLeft, animateIn, animateLeft ], { optional: true }),
+                    query(':leave', [ positionCenter, animateOut, animateRight ], { optional: true })
                 ])
     )
 ]);
