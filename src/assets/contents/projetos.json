@@ -18,19 +18,6 @@
             "caption": "Criação da CRP Mango"
         },
         {
-            "url": "https://gabriel.money/",
-            "image": {
-                "src": "assets/images/gabrielmoney.jpg",
-                "alt": "Print do site Gabriel Money",
-                "width": "430",
-                "height": "560"
-            },
-            "tag": "desenvolvimento",
-            "name": "Gabriel Money",
-            "tech": "Wordpress",
-            "caption": "Criação da CRP Mango"
-        },
-        {
             "url": "https://clinicaflorence.com.br/",
             "image": {
                 "src": "assets/images/clinicaflorence.jpg",
@@ -41,7 +28,7 @@
             "tag": "desenvolvimento",
             "name": "Clínica Florence",
             "tech": "Wordpress",
-            "caption": "Criação da Quantica Comunicação"
+            "caption": "Criação da Quantica"
         },
         {
             "url": "https://quantica3d.com.br/pt/home",
@@ -54,7 +41,20 @@
             "tag": "desenvolvimento",
             "name": "Quantica 3D",
             "tech": "Angular • Wordpress",
-            "caption": "Criação da Quantica Comunicação"
+            "caption": "Criação da Quantica"
+        },
+        {
+            "url": "https://lit760.com.br/",
+            "image": {
+                "src": "assets/images/lit760.jpg",
+                "alt": "Print da landing page Lit760",
+                "width": "430",
+                "height": "560"
+            },
+            "tag": "desenvolvimento",
+            "name": "Lit760",
+            "tech": "HTML • CSS • jQuery",
+            "caption": "Criação da Quantica"
         },
         {
             "url": "https://www.sertenge.com.br/selettosalvadornorte/",
@@ -67,7 +67,7 @@
             "tag": "desenvolvimento",
             "name": "Seletto Salvador Norte",
             "tech": "HTML • CSS • jQuery",
-            "caption": "Criação da Quantica Comunicação"
+            "caption": "Criação da Quantica"
         },
         {
             "url": "https://hortoboulevard.com.br/",
@@ -80,7 +80,7 @@
             "tag": "desenvolvimento",
             "name": "Horto Boulevard",
             "tech": "HTML • CSS • jQuery",
-            "caption": "Criação da Quantica Comunicação"
+            "caption": "Criação da Quantica"
         }
     ]
 }
